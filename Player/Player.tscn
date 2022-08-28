@@ -1,7 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/PlayerCat2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/PlayerCat4.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/PlayerCat3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/PlayerCat1.png" type="Texture" id=5]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
@@ -9,9 +24,24 @@ region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "Cat3Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "Cat4Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
+"loop": true,
+"name": "Cat1Idle",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Cat2Idle",
 "speed": 5.0
 } ]
 
@@ -25,9 +55,11 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -32 )
 frames = SubResource( 2 )
-animation = "Idle"
+animation = "Cat4Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, -7 )
 rotation = 1.5708
 shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

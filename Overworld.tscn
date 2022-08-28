@@ -3,14 +3,15 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 120, 10 )
+extents = Vector2( 120, 8 )
 
 [node name="Overworld" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 160 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 120, 160 )
+position = Vector2( 120, 168 )
 shape = SubResource( 1 )
