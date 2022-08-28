@@ -84,22 +84,61 @@ func _physics_process(delta):
 		cat3AnimatedSprite.flip_h = true
 		cat4AnimatedSprite.flip_h = true
 		
+	if is_jumping:
+		match cat_state:
+			CAT1:
+				cat1AnimatedSprite.animation = "Jump"
+			CAT2:
+				cat2AnimatedSprite.animation = "Jump"
+			CAT3:
+				cat3AnimatedSprite.animation = "Jump"
+			CAT4:
+				cat4AnimatedSprite.animation = "Jump"
+	elif is_running:
+		match cat_state:
+			CAT1:
+				cat1AnimatedSprite.animation = "Run"
+			CAT2:
+				cat2AnimatedSprite.animation = "Run"
+			CAT3:
+				cat3AnimatedSprite.animation = "Run"
+			CAT4:
+				cat4AnimatedSprite.animation = "Run"
+	elif is_falling:
+		pass
+	elif is_idling:
+		match cat_state:
+			CAT1:
+				cat1AnimatedSprite.animation = "Idle"
+			CAT2:
+				cat2AnimatedSprite.animation = "Idle"
+			CAT3:
+				cat3AnimatedSprite.animation = "Idle"
+			CAT4:
+				cat4AnimatedSprite.animation = "Idle"
+		
 func cat_state():
 	match cat_state:
 		CAT1: 
+			cat1AnimatedSprite.playing = true
 			cat1AnimatedSprite.visible = true
 			cat1CollisionShape.disabled = false
 			speed = cat1_speed
 			jump_strength = cat1_jump_strength
 			
+			cat2AnimatedSprite.playing = false
 			cat2AnimatedSprite.visible = false
 			cat2CollisionShape.disabled = true
+			cat2AnimatedSprite.playing=false
 			cat3AnimatedSprite.visible = false
 			cat3CollisionShape.disabled = true
+			cat3AnimatedSprite.playing = false
 			cat4AnimatedSprite.visible = false
 			cat4CollisionShape.disabled = true
+			cat4AnimatedSprite.playing = false
 			
 		CAT2:
+			cat2AnimatedSprite.playing = true
 			cat2AnimatedSprite.visible = true
 			cat2CollisionShape.disabled = false
 			speed = cat2_speed
@@ -107,12 +146,16 @@ func cat_state():
 			
 			cat1AnimatedSprite.visible = false
 			cat1CollisionShape.disabled = true
+			cat1AnimatedSprite.playing = false
 			cat3AnimatedSprite.visible = false
 			cat3CollisionShape.disabled = true
+			cat3AnimatedSprite.playing = false
 			cat4AnimatedSprite.visible = false
 			cat4CollisionShape.disabled = true
+			cat4AnimatedSprite.playing = false
 			
 		CAT3:
+			cat3AnimatedSprite.playing = true
 			cat3AnimatedSprite.visible = true
 			cat3CollisionShape.disabled = false
 			speed = cat3_speed
@@ -120,23 +163,29 @@ func cat_state():
 			
 			cat1AnimatedSprite.visible = false
 			cat1CollisionShape.disabled = true
+			cat1AnimatedSprite.playing = false
 			cat2AnimatedSprite.visible = false
 			cat2CollisionShape.disabled = true
+			cat2AnimatedSprite.playing = false
 			cat4AnimatedSprite.visible = false
 			cat4CollisionShape.disabled = true
+			cat4AnimatedSprite.playing = false
 		CAT4:
+			cat4AnimatedSprite.playing = true
 			cat4AnimatedSprite.visible = true
 			cat4CollisionShape.disabled = false
 			speed = cat4_speed
 			jump_strength = cat4_jump_strength
 			
+			cat1AnimatedSprite.playing = false
 			cat1AnimatedSprite.visible = false
 			cat1CollisionShape.disabled = true
+			cat2AnimatedSprite.playing = false
 			cat2AnimatedSprite.visible = false
 			cat2CollisionShape.disabled = true
+			cat3AnimatedSprite.playing = false
 			cat3AnimatedSprite.visible = false
 			cat3CollisionShape.disabled = true
-		
 			
 func level_up():
 	if food_consumed == 0:
@@ -147,6 +196,7 @@ func level_up():
 		cat_state = CAT3
 	if food_consumed == 3:
 		cat_state = CAT4
+		
 		
 		
 			
