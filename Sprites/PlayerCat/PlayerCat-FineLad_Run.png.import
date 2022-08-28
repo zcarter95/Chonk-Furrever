@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerCat.png-b88deabe1912ebf361b68f1363f18f71.stex"
+path="res://.import/PlayerCat-FineLad_Run.png-92b02aeb3a1782b3852ad99e39104511.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PlayerCat.png"
-dest_files=[ "res://.import/PlayerCat.png-b88deabe1912ebf361b68f1363f18f71.stex" ]
+source_file="res://Sprites/PlayerCat/PlayerCat-FineLad_Run.png"
+dest_files=[ "res://.import/PlayerCat-FineLad_Run.png-92b02aeb3a1782b3852ad99e39104511.stex" ]
 
 [params]
 

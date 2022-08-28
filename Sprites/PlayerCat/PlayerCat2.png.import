@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerCat-OhLawd_JumpUp.png-b7bcb4d8817c85f4e8a5207543e37141.stex"
+path="res://.import/PlayerCat2.png-f14e05e54eacd121427a095fa594bd66.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PlayerCat-OhLawd_JumpUp.png"
-dest_files=[ "res://.import/PlayerCat-OhLawd_JumpUp.png-b7bcb4d8817c85f4e8a5207543e37141.stex" ]
+source_file="res://Sprites/PlayerCat/PlayerCat2.png"
+dest_files=[ "res://.import/PlayerCat2.png-f14e05e54eacd121427a095fa594bd66.stex" ]
 
 [params]
 
