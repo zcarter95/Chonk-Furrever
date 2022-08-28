@@ -91,21 +91,52 @@ func cat_state():
 			cat1CollisionShape.disabled = false
 			speed = cat1_speed
 			jump_strength = cat1_jump_strength
+			
+			cat2AnimatedSprite.visible = false
+			cat2CollisionShape.disabled = true
+			cat3AnimatedSprite.visible = false
+			cat3CollisionShape.disabled = true
+			cat4AnimatedSprite.visible = false
+			cat4CollisionShape.disabled = true
+			
 		CAT2:
 			cat2AnimatedSprite.visible = true
 			cat2CollisionShape.disabled = false
 			speed = cat2_speed
 			jump_strength = cat2_jump_strength
+			
+			cat1AnimatedSprite.visible = false
+			cat1CollisionShape.disabled = true
+			cat3AnimatedSprite.visible = false
+			cat3CollisionShape.disabled = true
+			cat4AnimatedSprite.visible = false
+			cat4CollisionShape.disabled = true
+			
 		CAT3:
 			cat3AnimatedSprite.visible = true
 			cat3CollisionShape.disabled = false
 			speed = cat3_speed
 			jump_strength = cat3_jump_strength
+			
+			cat1AnimatedSprite.visible = false
+			cat1CollisionShape.disabled = true
+			cat2AnimatedSprite.visible = false
+			cat2CollisionShape.disabled = true
+			cat4AnimatedSprite.visible = false
+			cat4CollisionShape.disabled = true
 		CAT4:
 			cat4AnimatedSprite.visible = true
 			cat4CollisionShape.disabled = false
 			speed = cat4_speed
 			jump_strength = cat4_jump_strength
+			
+			cat1AnimatedSprite.visible = false
+			cat1CollisionShape.disabled = true
+			cat2AnimatedSprite.visible = false
+			cat2CollisionShape.disabled = true
+			cat3AnimatedSprite.visible = false
+			cat3CollisionShape.disabled = true
+		
 			
 func level_up():
 	if food_consumed == 0:
