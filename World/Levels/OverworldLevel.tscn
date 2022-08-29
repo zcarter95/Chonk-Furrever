@@ -1,15 +1,16 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Powerups/Food/Food.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Levels/OverworldLevel.gd" type="Script" id=2]
 [ext_resource path="res://World/Door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Overworld.gd" type="Script" id=4]
+[ext_resource path="res://Powerups/Food/Food.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 120, 8 )
 
 [node name="Overworld" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource( 2 )
+level_name = "Overworld"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 224, 160 )
@@ -20,15 +21,16 @@ position = Vector2( 224, 160 )
 position = Vector2( 120, 168 )
 shape = SubResource( 1 )
 
-[node name="Food2" parent="." instance=ExtResource( 2 )]
+[node name="Food2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 48, 144 )
 
-[node name="Food3" parent="." instance=ExtResource( 2 )]
+[node name="Food3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 112, 144 )
 
-[node name="Food4" parent="." instance=ExtResource( 2 )]
+[node name="Food4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 176, 144 )
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
-position = Vector2( 10, 160 )
-scene_to_load = "res://World/Levels/Level2.tscn"
+position = Vector2( -10, 160 )
+
+[connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
