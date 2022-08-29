@@ -18,10 +18,10 @@ export var cat1_speed = 130.0
 export var cat2_speed = 120.0
 export var cat3_speed = 110.0
 export var cat4_speed = 100.0
-export var cat1_jump_strength = 650.0
-export var cat2_jump_strength = 600.0
-export var cat3_jump_strength = 550.0
-export var cat4_jump_strength = 500.0
+export var cat1_jump_strength = 600.0
+export var cat2_jump_strength = 550.0
+export var cat3_jump_strength = 475.0
+export var cat4_jump_strength = 425.0
 export var gravity = 2000.0
 
 enum {CAT1, CAT2, CAT3, CAT4}
@@ -42,11 +42,11 @@ func _ready():
 	cat3CollisionShape.disabled = true
 	cat4CollisionShape.disabled = true
 	
-	cat_state()
+	handle_cat_state()
 
 func _physics_process(delta):
 	
-	cat_state()
+	handle_cat_state()
 	level_up()
 	
 	# Get Input
@@ -125,7 +125,7 @@ func _physics_process(delta):
 			CAT4:
 				cat4AnimatedSprite.animation = "Idle"
 		
-func cat_state():
+func handle_cat_state():
 	match cat_state:
 		CAT1: 
 			cat1AnimatedSprite.playing = true
