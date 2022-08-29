@@ -105,7 +105,15 @@ func _physics_process(delta):
 			CAT4:
 				cat4AnimatedSprite.animation = "Run"
 	elif is_falling:
-		pass
+		match cat_state:
+			CAT1:
+				cat1AnimatedSprite.animation = "Falling"
+			CAT2:
+				cat2AnimatedSprite.animation = "Falling"
+			CAT3:
+				cat3AnimatedSprite.animation = "Falling"
+			CAT4:
+				cat4AnimatedSprite.animation = "Falling"
 	elif is_idling:
 		match cat_state:
 			CAT1:
