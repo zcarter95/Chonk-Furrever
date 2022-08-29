@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Powerups/Food/Food.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Overworld.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Backgrounds/alley_bg1.png" type="Texture" id=5]
 [ext_resource path="res://Platforms and Props/Window.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Platforms and Props/GarbageCan.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 120, 8 )
@@ -29,7 +30,7 @@ position = Vector2( 48, 144 )
 position = Vector2( 112, 144 )
 
 [node name="Food4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 118, 48 )
+position = Vector2( 52, 24 )
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
 position = Vector2( 10, 160 )
@@ -43,3 +44,7 @@ __meta__ = {
 }
 
 [node name="Window" parent="." instance=ExtResource( 6 )]
+position = Vector2( 48, 12 )
+
+[node name="GarbageCan" parent="." instance=ExtResource( 7 )]
+position = Vector2( 164, 127 )
