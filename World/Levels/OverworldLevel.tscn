@@ -3,7 +3,7 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Powerups/Food/Food.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Overworld.gd" type="Script" id=4]
+[ext_resource path="res://World/Levels/OverworldLevel.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Backgrounds/alley_bg1.png" type="Texture" id=5]
 [ext_resource path="res://Platforms and Props/Window.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Platforms and Props/GarbageCan.tscn" type="PackedScene" id=7]
@@ -13,6 +13,7 @@ extents = Vector2( 120, 8 )
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource( 4 )
+level_name = "Overworld"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 223, 150 )
@@ -34,7 +35,6 @@ position = Vector2( 52, 24 )
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
 position = Vector2( 10, 160 )
-scene_to_load = "res://World/Levels/Level2.tscn"
 
 [node name="AlleyBg1" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -48,3 +48,5 @@ position = Vector2( 48, 12 )
 
 [node name="GarbageCan" parent="." instance=ExtResource( 7 )]
 position = Vector2( 164, 127 )
+
+[connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
