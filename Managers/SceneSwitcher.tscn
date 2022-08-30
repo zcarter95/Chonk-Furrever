@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://World/Levels/OverworldLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Levels/AlleyLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Managers/SceneSwitcher.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]

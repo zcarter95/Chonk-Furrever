@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://World/Levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Platforms and Props/GarbageCan.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Backgrounds/alley_bg1.png" type="Texture" id=4]
+[ext_resource path="res://Powerups/Food/Food.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Platforms and Props/Window.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 120, 8 )
+
+[node name="Overworld" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 223, 150 )
+current = true
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 223, 150 )
+
+[node name="RemoteTransform2D" parent="Player" index="10"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 120, 160 )
+shape = SubResource( 1 )
+
+[node name="Food" type="Node2D" parent="."]
+
+[node name="Food2" parent="Food" instance=ExtResource( 5 )]
+position = Vector2( 48, 144 )
+
+[node name="Food3" parent="Food" instance=ExtResource( 5 )]
+position = Vector2( 112, 144 )
+
+[node name="Food4" parent="Food" instance=ExtResource( 5 )]
+position = Vector2( 52, 24 )
+
+[node name="KitchenDoor" parent="." instance=ExtResource( 6 )]
+position = Vector2( -10, 151 )
+scene_to_load = "res://World/Levels/KitchenLevel.tscn"
+
+[node name="AlleyBg1" type="TextureRect" parent="."]
+show_behind_parent = true
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Window" parent="." instance=ExtResource( 7 )]
+position = Vector2( 48, 12 )
+
+[node name="GarbageCan" parent="." instance=ExtResource( 3 )]
+position = Vector2( 163, 126 )
+
+[node name="BottomLeft" type="Position2D" parent="."]
+position = Vector2( 0, 160 )
+
+[node name="TopRight" type="Position2D" parent="."]
+position = Vector2( 240, 0 )
+
+[editable path="Player"]
+[editable path="KitchenDoor"]
