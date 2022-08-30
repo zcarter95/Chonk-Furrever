@@ -31,6 +31,7 @@ var cat_state = CAT1
 var speed = 100.0
 var jump_strength = 500.00
 var food_consumed = 0
+var missable_food_consumed = 0
 
 func _ready():
 	cat1AnimatedSprite.visible = false
