@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World/Levels/OverworldLevel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Platforms and Props/Block.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Managers/SceneSwitcher.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -52,5 +51,4 @@ color = Color( 0, 0, 0, 0 )
 anims/FadeIn = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
 
-[node name="Block2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 223, 43 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

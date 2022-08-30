@@ -13,16 +13,26 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
+}, {
+"base": "Object",
+"class": "SceneManagerConstants",
+"language": "GDScript",
+"path": "res://addons/scene_manager/SceneManagerConstants.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Player": "",
+"SceneManagerConstants": ""
 }
 
 [application]
 
 config/name="ChonkFurrever"
-run/main_scene="res://Managers/SceneSwitcher.tscn"
+run/main_scene="res://World/Levels/OverworldLevel.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
 [display]
 
@@ -32,6 +42,10 @@ window/size/test_width=960
 window/size/test_height=640
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/scene_manager/plugin.cfg" )
 
 [importer_defaults]
 
