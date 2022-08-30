@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Platforms and Props/Window.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Platforms and Props/GarbageCan.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Powerups/Food/Food.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Powerups/Food/Food.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 120, 10 )
@@ -19,8 +18,7 @@ script = ExtResource( 1 )
 position = Vector2( 206, 160 )
 current = true
 
-[node name="GarbageCan" type="KinematicBody2D" parent="." instance=ExtResource( 6 )]
-show_behind_parent = true
+[node name="GarbageCan" parent="." instance=ExtResource( 6 )]
 position = Vector2( 43, 126 )
 
 [node name="AlleyBg1" type="Sprite" parent="."]
@@ -28,8 +26,7 @@ position = Vector2( 120, 80 )
 z_index = -100
 texture = ExtResource( 4 )
 
-[node name="Window" type="KinematicBody2D" parent="." instance=ExtResource( 5 )]
-show_behind_parent = true
+[node name="Window" parent="." instance=ExtResource( 5 )]
 position = Vector2( 140, 35 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -40,17 +37,14 @@ shape = SubResource( 1 )
 
 [node name="Food" type="Node2D" parent="."]
 
-[node name="Food2" type="Area2D" parent="Food" instance=ExtResource( 7 )]
+[node name="Food2" parent="Food" instance=ExtResource( 7 )]
 position = Vector2( 33, 45 )
-script = ExtResource( 8 )
 
-[node name="Food3" type="Area2D" parent="Food" instance=ExtResource( 7 )]
+[node name="Food3" parent="Food" instance=ExtResource( 7 )]
 position = Vector2( 130, 144 )
-script = ExtResource( 8 )
 
-[node name="Food4" type="Area2D" parent="Food" instance=ExtResource( 7 )]
+[node name="Food4" parent="Food" instance=ExtResource( 7 )]
 position = Vector2( 141, 44 )
-script = ExtResource( 8 )
 missable = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -71,9 +65,6 @@ position = Vector2( 0, 160 )
 [node name="TopRight" type="Position2D" parent="."]
 position = Vector2( 240, 0 )
 
-[connection signal="body_entered" from="Food/Food2" to="Food/Food2" method="_on_Food_body_entered"]
-[connection signal="body_entered" from="Food/Food3" to="Food/Food3" method="_on_Food_body_entered"]
-[connection signal="body_entered" from="Food/Food4" to="Food/Food4" method="_on_Food_body_entered"]
 [connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
 
 [editable path="Player"]
