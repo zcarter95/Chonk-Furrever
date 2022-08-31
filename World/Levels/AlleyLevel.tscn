@@ -52,6 +52,9 @@ missable = true
 position = Vector2( -10, 151 )
 scene_to_load = "res://World/Levels/KitchenLevel.tscn"
 
+[node name="CollisionShape2D" parent="KitchenDoor" index="0"]
+position = Vector2( -150, -39 )
+
 [node name="AlleyBg1" type="Sprite" parent="."]
 show_behind_parent = true
 position = Vector2( -152, -32 )

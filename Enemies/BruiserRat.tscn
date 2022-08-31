@@ -46,7 +46,7 @@ radius = 9.0
 height = 2.0
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 7, 5.625 )
+extents = Vector2( 8.5, 4 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "Squash"
@@ -96,12 +96,12 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1, -16 )
 frames = SubResource( 7 )
-animation = "Run"
+animation = "Idle"
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -10 )
+position = Vector2( 0, -12 )
 shape = SubResource( 8 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -122,16 +122,18 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopChecker"]
-position = Vector2( 2, -25.625 )
+position = Vector2( 0, -24 )
 shape = SubResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Squash = SubResource( 10 )
 
 [node name="SideChecker" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideChecker"]
-position = Vector2( 2, -10 )
+position = Vector2( 0, -10 )
 shape = SubResource( 11 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

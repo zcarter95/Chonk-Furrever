@@ -11,6 +11,8 @@ onready var animatedSprite = $AnimatedSprite
 onready var timer = $Timer
 onready var reverseDirectionTimer = $ReverseDirectionTimer
 onready var animationPlayer = $AnimationPlayer
+onready var topChecker = $TopChecker/CollisionShape2D
+onready var sideChecker = $SideChecker/CollisionShape2D
 
 func _ready():
 	randomize()
@@ -41,8 +43,11 @@ func _on_ReverseDirectionTimer_timeout():
 
 func _on_TopChecker_body_entered(body):
 	if body is Player:
-		velocity = direction * 0
-		animationPlayer.play("Squash")
+		if body.cat_state >= 2:
+			topChecker.disabled = true
+			sideChecker.disabled = true
+			velocity = direction * 0
+			animationPlayer.play("Squash")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
