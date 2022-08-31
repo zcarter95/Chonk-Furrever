@@ -124,6 +124,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopChecker"]
 position = Vector2( 0, -24 )
 shape = SubResource( 9 )
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Squash = SubResource( 10 )

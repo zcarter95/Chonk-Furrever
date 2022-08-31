@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Sprites/PlayerCat/PlayerCat-OhLawd_Idle.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -294,7 +294,24 @@ animations = [ {
 radius = 17.0
 height = 10.0
 
+[sub_resource type="Animation" id=71]
+resource_name = "Hurt"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 30, 0 ) ]
+}
+
 [node name="Player" type="KinematicBody2D" groups=["Player", "scene_manager_entity_nodes"]]
+position = Vector2( 6.66664, 0 )
 collision_layer = 2
 collision_mask = 13
 script = ExtResource( 2 )
@@ -356,6 +373,7 @@ rotation = 1.5708
 shape = SubResource( 17 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hurt = SubResource( 71 )
 
 [node name="Node2D" type="Node2D" parent="."]
 

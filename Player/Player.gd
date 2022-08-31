@@ -14,6 +14,8 @@ onready var cat2CollisionShape = $Cat2CollisionShape2D
 onready var cat3CollisionShape = $Cat2CollisionShape2D
 onready var cat4CollisionShape = $Cat1CollisionShape2D
 
+onready var animationPlayer = $AnimationPlayer
+
 export var cat1_speed = 130.0
 export var cat2_speed = 120.0
 export var cat3_speed = 110.0
@@ -32,6 +34,7 @@ var speed = 100.0
 var jump_strength = 500.00
 var food_consumed = 0
 var missable_food_consumed = 0
+var horizontal_direction = 0
 
 func _ready():
 	cat1AnimatedSprite.visible = false
@@ -51,7 +54,7 @@ func _physics_process(delta):
 	level_up()
 	
 	# Get Input
-	var horizontal_direction = (Input.get_action_strength("right") - Input.get_action_strength("left"))
+	horizontal_direction = (Input.get_action_strength("right") - Input.get_action_strength("left"))
 	
 	# Update Horizontal Velocity
 	velocity.x = horizontal_direction * speed
@@ -130,6 +133,13 @@ func player_hurt():
 	food_consumed -= 1
 	if food_consumed < 0:
 		food_consumed = 0
+		
+func receive_knockback(damage_source_pos: Vector2):
+	var knockback_direction = damage_source_pos.direction_to(self.global_position)
+	var knockback_strength = 50
+	var knockback = knockback_direction * knockback_strength
+	
+	global_position += knockback
 		
 		
 func handle_cat_state():

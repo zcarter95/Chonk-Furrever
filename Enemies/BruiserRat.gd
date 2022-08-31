@@ -59,5 +59,6 @@ func _on_SideChecker_body_entered(body):
 	if body is Player:
 		if body.cat_state < 2:
 			body.player_hurt()
+			body.receive_knockback(global_position)
 		else:
 			animationPlayer.play("Squash")
