@@ -10,6 +10,10 @@ onready var rayCast = $RayCast2D
 onready var animatedSprite = $AnimatedSprite
 onready var timer = $Timer
 onready var reverseDirectionTimer = $ReverseDirectionTimer
+onready var animationPlayer = $AnimationPlayer
+
+func _ready():
+	randomize()
 
 func _physics_process(delta):
 	var found_wall = is_on_wall()
@@ -33,3 +37,19 @@ func _on_Timer_timeout():
 func _on_ReverseDirectionTimer_timeout():
 	direction *= -1
 	scale.x *= -1
+
+
+func _on_TopChecker_body_entered(body):
+	if body is Player:
+		velocity = direction * 0
+		animationPlayer.play("Squash")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Squash":
+		queue_free()
+
+
+func _on_SideChecker_body_entered(body):
+	if body is Player:
+		body.player_death()

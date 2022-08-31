@@ -125,6 +125,9 @@ func _physics_process(delta):
 				cat3AnimatedSprite.animation = "Idle"
 			CAT4:
 				cat4AnimatedSprite.animation = "Idle"
+	
+func player_death():
+	queue_free()
 		
 func handle_cat_state():
 	match cat_state:

@@ -20,6 +20,8 @@ func _physics_process(delta):
 		SceneManager.reload_scene()
 	
 	food_count = food.get_child_count()
-
-	if player.cat_state >= 2 && player.missable_food_consumed == 0:
+	
+	if not get_tree().get_nodes_in_group("Player"):
+		return
+	elif player.cat_state >= 2 && player.missable_food_consumed == 0:
 		add_child(new_dialog)
