@@ -126,8 +126,11 @@ func _physics_process(delta):
 			CAT4:
 				cat4AnimatedSprite.animation = "Idle"
 	
-func player_death():
-	queue_free()
+func player_hurt():
+	food_consumed -= 1
+	if food_consumed < 0:
+		food_consumed = 0
+		
 		
 func handle_cat_state():
 	match cat_state:

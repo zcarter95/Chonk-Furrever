@@ -57,4 +57,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_SideChecker_body_entered(body):
 	if body is Player:
-		body.player_death()
+		if body.cat_state < 2:
+			body.player_hurt()
+		else:
+			animationPlayer.play("Squash")

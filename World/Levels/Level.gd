@@ -25,3 +25,10 @@ func _physics_process(delta):
 		return
 	elif player.cat_state >= 2 && player.missable_food_consumed == 0:
 		add_child(new_dialog)
+	elif player.cat_state == 2 && food_count == 0:
+		add_child(new_dialog)
+	elif player.cat_state == 1 && food_count == 1:
+		add_child(new_dialog)
+	elif player.cat_state == 0 && food_count == 2:
+		add_child(new_dialog)
+
