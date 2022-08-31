@@ -311,7 +311,7 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D" groups=["Player", "scene_manager_entity_nodes"]]
-position = Vector2( 6.66664, 0 )
+position = Vector2( 30, 0 )
 collision_layer = 2
 collision_mask = 13
 script = ExtResource( 2 )
@@ -327,7 +327,6 @@ playing = true
 flip_h = true
 
 [node name="Cat1CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, -6 )
 rotation = 1.5708
 shape = SubResource( 9 )
@@ -340,7 +339,6 @@ animation = "Falling"
 playing = true
 
 [node name="Cat2CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 1, -7 )
 rotation = 1.5708
 shape = SubResource( 5 )

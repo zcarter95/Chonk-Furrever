@@ -136,10 +136,11 @@ func player_hurt():
 		
 func receive_knockback(damage_source_pos: Vector2):
 	var knockback_direction = damage_source_pos.direction_to(self.global_position)
-	var knockback_strength = 50
+	var knockback_strength = 10
 	var knockback = knockback_direction * knockback_strength
 	
 	global_position += knockback
+	global_position.y += 10
 		
 		
 func handle_cat_state():
