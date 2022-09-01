@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Sprites/Enemies/BruiserRat-BruiserRat_Idle.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Enemies/BruiserRat-BruiserRat_Run.png" type="Texture" id=2]
@@ -45,9 +45,6 @@ animations = [ {
 radius = 9.0
 height = 2.0
 
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 8.5, 4 )
-
 [sub_resource type="Animation" id=10]
 resource_name = "Squash"
 length = 0.2
@@ -75,29 +72,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( -1, -16 ), Vector2( -1, -2 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("TopChecker/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 11, 14 )
 
 [node name="BruiserRat" type="KinematicBody2D"]
+collision_layer = 0
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1, -16 )
 frames = SubResource( 7 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -117,15 +103,6 @@ autostart = true
 wait_time = 10.0
 autostart = true
 
-[node name="TopChecker" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopChecker"]
-position = Vector2( 0, -24 )
-shape = SubResource( 9 )
-disabled = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Squash = SubResource( 10 )
 
@@ -134,11 +111,10 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideChecker"]
-position = Vector2( 0, -10 )
+position = Vector2( 1, -14 )
 shape = SubResource( 11 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="ReverseDirectionTimer" to="." method="_on_ReverseDirectionTimer_timeout"]
-[connection signal="body_entered" from="TopChecker" to="." method="_on_TopChecker_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="SideChecker" to="." method="_on_SideChecker_body_entered"]
