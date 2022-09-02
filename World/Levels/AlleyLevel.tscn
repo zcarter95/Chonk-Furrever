@@ -227,7 +227,7 @@ scale = Vector2( -1, 1 )
 
 [node name="AnimatedSprite" parent="Enemies/BouncerRat" index="2"]
 position = Vector2( 1, -31 )
-frame = 3
+frame = 4
 
 [node name="CollisionShape2D" parent="Enemies/BouncerRat/Area2D" index="0"]
 position = Vector2( 74, -9 )
