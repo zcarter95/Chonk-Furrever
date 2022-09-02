@@ -1,8 +1,8 @@
 extends Node2D
 
-onready var camera = $Camera2D
-onready var bottomLeft = $BottomLeft
-onready var topRight = $TopRight
+onready var camera = $Camera/Camera2D
+onready var bottomLeft = $Camera/BottomLeft
+onready var topRight = $Camera/TopRight
 onready var player = $Player
 onready var food = $Food
 
