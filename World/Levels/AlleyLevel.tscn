@@ -83,7 +83,7 @@ position = Vector2( 436, -8 )
 position = Vector2( 668, 48 )
 
 [node name="GarbageCan" parent="Props and Platforms" instance=ExtResource( 3 )]
-position = Vector2( 612, 176 )
+position = Vector2( 386, 175 )
 
 [node name="GarbageCan2" parent="Props and Platforms" instance=ExtResource( 3 )]
 position = Vector2( -32, 176 )
@@ -98,16 +98,16 @@ __meta__ = {
 }
 
 [node name="Food2" parent="Food" instance=ExtResource( 5 )]
-position = Vector2( 180, 72 )
+position = Vector2( 158, 72 )
 
 [node name="Food5" parent="Food" instance=ExtResource( 5 )]
-position = Vector2( 28, 48 )
+position = Vector2( -107, 203 )
 
 [node name="Food7" parent="Food" instance=ExtResource( 5 )]
-position = Vector2( 440, 12 )
+position = Vector2( 221, 134 )
 
 [node name="Food8" parent="Food" instance=ExtResource( 5 )]
-position = Vector2( 556, 12 )
+position = Vector2( 310, 137 )
 
 [node name="Food9" parent="Food" instance=ExtResource( 5 )]
 position = Vector2( 672, 68 )
@@ -150,13 +150,10 @@ __meta__ = {
 position = Vector2( -200, 208 )
 
 [node name="Block17" parent="Blocks" instance=ExtResource( 8 )]
-position = Vector2( 284, 60 )
+position = Vector2( 262, 46 )
 
 [node name="Block19" parent="Blocks" instance=ExtResource( 8 )]
 position = Vector2( 44, 66 )
-
-[node name="Block18" parent="Blocks" instance=ExtResource( 8 )]
-position = Vector2( 320, 60 )
 
 [node name="Block2" parent="Blocks" instance=ExtResource( 8 )]
 position = Vector2( -200, 176 )
@@ -210,19 +207,19 @@ __meta__ = {
 }
 
 [node name="BruiserRat" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 40, 216 )
+position = Vector2( 95, 215 )
 
 [node name="BruiserRat2" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 280, 216 )
-
-[node name="BruiserRat3" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 426, 216 )
+position = Vector2( 564, 216 )
 
 [node name="BruiserRat4" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 612, 168 )
+position = Vector2( 386, 167 )
 
 [node name="BruiserRat5" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 220, 143 )
+position = Vector2( 263, 142 )
+
+[node name="BruiserRat6" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 553, 23 )
 
 [node name="BouncerRat" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 812, 173 )
@@ -230,7 +227,7 @@ scale = Vector2( -1, 1 )
 
 [node name="AnimatedSprite" parent="Enemies/BouncerRat" index="2"]
 position = Vector2( 1, -31 )
-frame = 2
+frame = 4
 
 [node name="CollisionShape2D" parent="Enemies/BouncerRat/Area2D" index="0"]
 position = Vector2( 74, -9 )
