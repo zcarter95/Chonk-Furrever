@@ -1,0 +1,27 @@
+{
+	"events": [
+		{
+			"character": "character-1662094503.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Can't you see the sign! "
+		},
+		{
+			"character": "character-1662094503.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "NO CATS ALLOWED!!"
+		},
+		{
+			"character": "character-1662094503.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "SCRAM!!!!!!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1662094430.json",
+		"name": "Bouncer"
+	}
+}
