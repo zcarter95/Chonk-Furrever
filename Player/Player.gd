@@ -26,10 +26,10 @@ export var cat3_jump_strength = 475.0
 export var cat4_jump_strength = 425.0
 export var gravity = 2000.0
 
-enum {CAT1, CAT2, CAT3, CAT4}
+enum cat_states {CAT1, CAT2, CAT3, CAT4}
 
 var velocity = Vector2.ZERO
-var cat_state = CAT1
+export (cat_states) var cat_state
 var speed = 100.0
 var jump_strength = 500.00
 var food_consumed = 0
@@ -90,43 +90,43 @@ func _physics_process(delta):
 		
 	if is_jumping:
 		match cat_state:
-			CAT1:
+			cat_states.CAT1:
 				cat1AnimatedSprite.animation = "Jump"
-			CAT2:
+			cat_states.CAT2:
 				cat2AnimatedSprite.animation = "Jump"
-			CAT3:
+			cat_states.CAT3:
 				cat3AnimatedSprite.animation = "Jump"
-			CAT4:
+			cat_states.CAT4:
 				cat4AnimatedSprite.animation = "Jump"
 	elif is_running:
 		match cat_state:
-			CAT1:
+			cat_states.CAT1:
 				cat1AnimatedSprite.animation = "Run"
-			CAT2:
+			cat_states.CAT2:
 				cat2AnimatedSprite.animation = "Run"
-			CAT3:
+			cat_states.CAT3:
 				cat3AnimatedSprite.animation = "Run"
-			CAT4:
+			cat_states.CAT4:
 				cat4AnimatedSprite.animation = "Run"
 	elif is_falling:
 		match cat_state:
-			CAT1:
+			cat_states.CAT1:
 				cat1AnimatedSprite.animation = "Falling"
-			CAT2:
+			cat_states.CAT2:
 				cat2AnimatedSprite.animation = "Falling"
-			CAT3:
+			cat_states.CAT3:
 				cat3AnimatedSprite.animation = "Falling"
-			CAT4:
+			cat_states.CAT4:
 				cat4AnimatedSprite.animation = "Falling"
 	elif is_idling:
 		match cat_state:
-			CAT1:
+			cat_states.CAT1:
 				cat1AnimatedSprite.animation = "Idle"
-			CAT2:
+			cat_states.CAT2:
 				cat2AnimatedSprite.animation = "Idle"
-			CAT3:
+			cat_states.CAT3:
 				cat3AnimatedSprite.animation = "Idle"
-			CAT4:
+			cat_states.CAT4:
 				cat4AnimatedSprite.animation = "Idle"
 	
 func player_hurt():
@@ -145,7 +145,7 @@ func receive_knockback(damage_source_pos: Vector2):
 		
 func handle_cat_state():
 	match cat_state:
-		CAT1: 
+		cat_states.CAT1: 
 			cat1AnimatedSprite.playing = true
 			cat1AnimatedSprite.visible = true
 			cat1CollisionShape.disabled = false
@@ -163,7 +163,7 @@ func handle_cat_state():
 			cat4CollisionShape.disabled = true
 			cat4AnimatedSprite.playing = false
 			
-		CAT2:
+		cat_states.CAT2:
 			cat2AnimatedSprite.playing = true
 			cat2AnimatedSprite.visible = true
 			cat2CollisionShape.disabled = false
@@ -180,7 +180,7 @@ func handle_cat_state():
 			cat4CollisionShape.disabled = true
 			cat4AnimatedSprite.playing = false
 			
-		CAT3:
+		cat_states.CAT3:
 			cat3AnimatedSprite.playing = true
 			cat3AnimatedSprite.visible = true
 			cat3CollisionShape.disabled = false
@@ -196,7 +196,7 @@ func handle_cat_state():
 			cat4AnimatedSprite.visible = false
 			cat4CollisionShape.disabled = true
 			cat4AnimatedSprite.playing = false
-		CAT4:
+		cat_states.CAT4:
 			cat4AnimatedSprite.playing = true
 			cat4AnimatedSprite.visible = true
 			cat4CollisionShape.disabled = false
@@ -215,13 +215,13 @@ func handle_cat_state():
 			
 func level_up():
 	if food_consumed == 0:
-		cat_state = CAT1
+		cat_state = cat_states.CAT1
 	if food_consumed == 1:
-		cat_state = CAT2
+		cat_state = cat_states.CAT2
 	if food_consumed == 2:
-		cat_state = CAT3
+		cat_state = cat_states.CAT3
 	if food_consumed == 3:
-		cat_state = CAT4
+		cat_state = cat_states.CAT4
 		
 		
 		
