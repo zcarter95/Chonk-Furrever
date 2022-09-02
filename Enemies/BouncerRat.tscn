@@ -5,9 +5,6 @@
 [ext_resource path="res://Sprites/Enemies/BuffassRat-BuffAssRat_Runaway.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Enemies/BuffassRat-BuffAssRat_Scared.png" type="Texture" id=4]
 
-[sub_resource type="Animation" id=16]
-resource_name = "Idle"
-
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 64, 64 )
@@ -69,7 +66,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
-"loop": true,
+"loop": false,
 "name": "Scared",
 "speed": 5.0
 } ]
@@ -80,19 +77,42 @@ extents = Vector2( 26.5, 54 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16, 842.5 )
 
+[sub_resource type="Animation" id=16]
+resource_name = "Runaway"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -32 ), Vector2( -125, -32 ) ]
+}
+
 [node name="BouncerRat" type="StaticBody2D"]
 script = ExtResource( 2 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../AnimationTree")
-anims/Idle = SubResource( 16 )
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -32 )
 frames = SubResource( 4 )
-animation = "Scared"
+animation = "Runaway"
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -105,4 +125,9 @@ shape = SubResource( 5 )
 position = Vector2( 5, 177.5 )
 shape = SubResource( 6 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Runaway = SubResource( 16 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
