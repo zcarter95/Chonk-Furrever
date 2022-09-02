@@ -218,9 +218,9 @@ func level_up():
 		cat_state = cat_states.CAT1
 	if food_consumed == 1:
 		cat_state = cat_states.CAT2
-	if food_consumed == 2:
-		cat_state = cat_states.CAT3
 	if food_consumed == 3:
+		cat_state = cat_states.CAT3
+	if food_consumed == 6:
 		cat_state = cat_states.CAT4
 		
 		
