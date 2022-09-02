@@ -152,6 +152,9 @@ position = Vector2( -200, 208 )
 [node name="Block17" parent="Blocks" instance=ExtResource( 8 )]
 position = Vector2( 284, 60 )
 
+[node name="Block19" parent="Blocks" instance=ExtResource( 8 )]
+position = Vector2( 44, 66 )
+
 [node name="Block18" parent="Blocks" instance=ExtResource( 8 )]
 position = Vector2( 320, 60 )
 
@@ -213,7 +216,7 @@ position = Vector2( 40, 216 )
 position = Vector2( 280, 216 )
 
 [node name="BruiserRat3" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 472, 216 )
+position = Vector2( 426, 216 )
 
 [node name="BruiserRat4" parent="Enemies" instance=ExtResource( 9 )]
 position = Vector2( 612, 168 )
@@ -227,7 +230,6 @@ scale = Vector2( -1, 1 )
 
 [node name="AnimatedSprite" parent="Enemies/BouncerRat" index="0"]
 position = Vector2( 1, -31 )
-frame = 0
 
 [node name="CollisionShape2D" parent="Enemies/BouncerRat/Area2D" index="0"]
 position = Vector2( 74, -9 )

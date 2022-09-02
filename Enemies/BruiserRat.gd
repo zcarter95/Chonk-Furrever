@@ -11,11 +11,12 @@ onready var animatedSprite = $AnimatedSprite
 onready var timer = $Timer
 onready var reverseDirectionTimer = $ReverseDirectionTimer
 onready var animationPlayer = $AnimationPlayer
-onready var topChecker = $TopChecker/CollisionShape2D
 onready var sideChecker = $SideChecker/CollisionShape2D
 
 func _ready():
 	randomize()
+	timer.wait_time = rand_range(2, 4)
+	reverseDirectionTimer.wait_time = rand_range(3, 6)
 
 func _physics_process(delta):
 	var found_wall = is_on_wall()
@@ -44,7 +45,6 @@ func _on_ReverseDirectionTimer_timeout():
 func _on_TopChecker_body_entered(body):
 	if body is Player:
 		if body.cat_state >= 2:
-			topChecker.disabled = true
 			sideChecker.disabled = true
 			velocity = direction * 0
 			animationPlayer.play("Squash")
