@@ -3,7 +3,7 @@
 [ext_resource path="res://World/Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Platforms and Props/GarbageCan.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Backgrounds/alley_bg1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Backgrounds/alley_long_bg.png" type="Texture" id=4]
 [ext_resource path="res://Powerups/Food/Food.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Platforms and Props/Window.tscn" type="PackedScene" id=7]
@@ -12,19 +12,19 @@
 [ext_resource path="res://Enemies/BouncerRat.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 276, 8 )
+extents = Vector2( 530, 8 )
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 248, 140 )
+position = Vector2( -160, 200 )
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 248, 140 )
+position = Vector2( -160, 200 )
 
 [node name="Cat1CollisionShape2D" parent="Player" index="1"]
 position = Vector2( 1, -6 )
@@ -32,10 +32,11 @@ position = Vector2( 1, -6 )
 [node name="RemoteTransform2D" parent="Player" index="10"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2( -28, 68 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 120, 148 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 342, 148 )
 shape = SubResource( 1 )
 
 [node name="Food" type="Node2D" parent="."]
@@ -60,11 +61,10 @@ position = Vector2( -150, -39 )
 
 [node name="AlleyBg1" type="Sprite" parent="."]
 show_behind_parent = true
-position = Vector2( -152, -32 )
+position = Vector2( -216, -268 )
 scale = Vector2( 1.1025, 1 )
 texture = ExtResource( 4 )
 centered = false
-region_enabled = true
 region_rect = Rect2( 0, -20, 501.526, 200 )
 __meta__ = {
 "_edit_lock_": true
@@ -77,31 +77,58 @@ position = Vector2( 48, -8 )
 position = Vector2( 160, 112 )
 
 [node name="BottomLeft" type="Position2D" parent="."]
-position = Vector2( -152, 144 )
+position = Vector2( -216, 212 )
 
 [node name="TopRight" type="Position2D" parent="."]
-position = Vector2( 424, -32 )
+position = Vector2( 840, -264 )
 
 [node name="Block" parent="." instance=ExtResource( 8 )]
-position = Vector2( 408, 152 )
+position = Vector2( -200, 208 )
 
 [node name="Block2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 408, 120 )
+position = Vector2( -200, 176 )
 
 [node name="Block3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 408, 88 )
+position = Vector2( -200, 144 )
 
 [node name="Block4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 408, 56 )
+position = Vector2( -200, 112 )
 
 [node name="Block5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 408, 24 )
+position = Vector2( -200, 80 )
 
 [node name="Block6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 408, -8 )
+position = Vector2( -200, 48 )
 
 [node name="Block7" parent="." instance=ExtResource( 8 )]
-position = Vector2( 408, -40 )
+position = Vector2( -200, 16 )
+
+[node name="Block8" parent="." instance=ExtResource( 8 )]
+position = Vector2( -200, -16 )
+
+[node name="Block9" parent="." instance=ExtResource( 8 )]
+position = Vector2( -200, -48 )
+
+[node name="Block10" parent="." instance=ExtResource( 8 )]
+position = Vector2( -200, -80 )
+
+[node name="Block11" parent="." instance=ExtResource( 8 )]
+position = Vector2( -200, -112 )
+
+[node name="Block12" parent="." instance=ExtResource( 8 )]
+position = Vector2( -200, -144 )
+
+[node name="Block13" parent="." instance=ExtResource( 8 )]
+position = Vector2( -200, -176 )
+
+[node name="Block14" parent="." instance=ExtResource( 8 )]
+position = Vector2( -200, -208 )
+
+[node name="Block15" parent="." instance=ExtResource( 8 )]
+position = Vector2( -200, -240 )
+
+[node name="Block16" parent="." instance=ExtResource( 8 )]
+position = Vector2( -200, -272 )
 
 [node name="BruiserRat" parent="." instance=ExtResource( 9 )]
 position = Vector2( 72, 140 )
