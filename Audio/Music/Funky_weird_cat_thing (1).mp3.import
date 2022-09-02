@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Funky_weird_cat_thing (1).mp3-d9c2fca12bea5cac3c8a6f0b8741a5ca.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Funky_weird_cat_thing (1).mp3"
+dest_files=[ "res://.import/Funky_weird_cat_thing (1).mp3-d9c2fca12bea5cac3c8a6f0b8741a5ca.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
