@@ -57,6 +57,7 @@ missable = true
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
 position = Vector2( -442, 173 )
+scene_to_load = "res://World/Levels/WinScreenLevel.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 212, 152 )
