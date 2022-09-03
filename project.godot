@@ -105,7 +105,6 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
-SoundManager="*res://addons/sound_manager/module/SoundManager.tscn"
 
 [display]
 
@@ -118,7 +117,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/sound_manager/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg", "res://addons/scene_manager/plugin.cfg" )
 
 [importer_defaults]
 
