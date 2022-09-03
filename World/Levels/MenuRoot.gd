@@ -10,6 +10,7 @@ var menu_stack := []
 
 onready var mainMenu = $MainMenu
 onready var controls = $Controls
+onready var options = $Options
 onready var tween = $Tween
 onready var animationPlayer = $AnimationPlayer
 
@@ -42,6 +43,8 @@ func get_menu_from_menu_id(menu_id: String) -> Control:
 			return mainMenu
 		"Controls":
 			return controls
+		"Options":
+			return options
 		_:
 			return mainMenu
 
@@ -62,3 +65,7 @@ func play_boom_sound():
 	
 func play_boom2_sound():
 	SoundManager.play_se("Boom2")
+
+
+func _on_Options_pressed():
+	move_to_next_menu("Options")
