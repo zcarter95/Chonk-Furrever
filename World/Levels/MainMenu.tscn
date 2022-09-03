@@ -1,17 +1,18 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/Backgrounds/alley_bg1.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Menus/Controls.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Menus/StartGame.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Menus/Chonk.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Menus/Furrevert.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Menus/Quit.png" type="Texture" id=6]
 [ext_resource path="res://World/Levels/MenuRoot.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/Menus/Back.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Menus/ControlsGuide.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Menus/ControlsTitle.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Menus/BackHover.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Menus/StartGameHover.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Menus/Options.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Menus/QuitClicked.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/Menus/QuitHover.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/Menus/ControlsHover.png" type="Texture" id=18]
 
@@ -32,7 +33,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("MainMenu/Chonk:rect_position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
@@ -44,48 +45,48 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("MainMenu/Furrever:rect_position")
-tracks/2/interp = 1
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 4, 8.5 ),
+"times": PoolRealArray( 0, 4, 8.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 250, 63 ), Vector2( 250, 63 ), Vector2( 0, 63 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("MainMenu/VBoxContainer/StartGame:rect_position")
-tracks/3/interp = 1
+tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 4, 9 ),
+"times": PoolRealArray( 0, 4, 8.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 200 ), Vector2( 0, 200 ), Vector2( 0, 0 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("MainMenu/VBoxContainer/Quit:rect_position")
-tracks/4/interp = 1
+tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 4, 9.4 ),
+"times": PoolRealArray( 0, 4, 9.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 300 ), Vector2( 0, 300 ), Vector2( 0, 44 ) ]
+"values": [ Vector2( 0, 300 ), Vector2( 0, 300 ), Vector2( 0, 63 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("MainMenu/VBoxContainer/Controls:rect_position")
-tracks/5/interp = 1
+tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 4, 9.2 ),
+"times": PoolRealArray( 0, 4, 8.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 250 ), Vector2( 0, 250 ), Vector2( 0, 22 ) ]
@@ -106,6 +107,18 @@ tracks/6/keys = {
 "args": [  ],
 "method": "play_boom2_sound"
 } ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("MainMenu/VBoxContainer/Options:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 4, 9.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 350 ), Vector2( 0, 350 ), Vector2( 0, 42 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -182,6 +195,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 0, 22 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("MainMenu/VBoxContainer/Options:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 42 ) ]
+}
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -224,11 +249,11 @@ stretch_mode = 4
 margin_left = 86.0
 margin_top = 82.0
 margin_right = 154.0
-margin_bottom = 135.0
+margin_bottom = 156.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 6
-custom_constants/separation = 13
+custom_constants/separation = 12
 alignment = 1
 
 [node name="StartGame" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
@@ -244,7 +269,7 @@ stretch_mode = 3
 [node name="Controls" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_top = 22.0
 margin_right = 68.0
-margin_bottom = 31.0
+margin_bottom = 31.0003
 action_mode = 0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 18 )
@@ -252,12 +277,23 @@ texture_hover = ExtResource( 18 )
 texture_focused = ExtResource( 18 )
 stretch_mode = 3
 
+[node name="Options" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
+margin_top = 42.0
+margin_right = 68.0
+margin_bottom = 53.0002
+action_mode = 0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 16 )
+texture_focused = ExtResource( 16 )
+stretch_mode = 3
+
 [node name="Quit" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_top = 44.0
 margin_right = 68.0
 margin_bottom = 53.0
 action_mode = 0
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 16 )
 texture_hover = ExtResource( 16 )
 texture_focused = ExtResource( 16 )
