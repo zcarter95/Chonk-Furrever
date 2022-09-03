@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/Menus/Controls.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Menus/StartGame.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Menus/Chonk.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Menus/Furrevert.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Menus/Furrever.png" type="Texture" id=5]
 [ext_resource path="res://World/Levels/MenuRoot.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/Menus/Back.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Menus/ControlsGuide.png" type="Texture" id=9]
@@ -269,7 +269,7 @@ stretch_mode = 3
 [node name="Controls" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_top = 22.0
 margin_right = 68.0
-margin_bottom = 31.0003
+margin_bottom = 31.0
 action_mode = 0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 18 )
@@ -280,7 +280,7 @@ stretch_mode = 3
 [node name="Options" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_top = 42.0
 margin_right = 68.0
-margin_bottom = 53.0002
+margin_bottom = 53.0
 action_mode = 0
 texture_normal = ExtResource( 13 )
 texture_pressed = ExtResource( 16 )
