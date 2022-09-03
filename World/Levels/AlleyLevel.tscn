@@ -28,7 +28,7 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
-position = Vector2( -162, 208 )
+position = Vector2( -167, 207 )
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -40,14 +40,15 @@ position = Vector2( -200, 196 )
 position = Vector2( 840, -264 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -162, 208 )
+position = Vector2( -167, 207 )
 z_index = 10
 
-[node name="Cat1CollisionShape2D" parent="Player" index="1"]
-position = Vector2( 1, -6 )
+[node name="Cat1AnimatedSprite" parent="Player" index="0"]
+visible = false
 
-[node name="Cat2CollisionShape2D" parent="Player" index="3"]
-position = Vector2( 0, -6 )
+[node name="Cat1CollisionShape2D" parent="Player" index="1"]
+visible = false
+position = Vector2( 1, -6 )
 
 [node name="RemoteTransform2D" parent="Player" index="10"]
 remote_path = NodePath("../../Camera/Camera2D")
@@ -56,7 +57,7 @@ remote_path = NodePath("../../Camera/Camera2D")
 position = Vector2( -28, 68 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 343, 148 )
+position = Vector2( 329, 147 )
 shape = SubResource( 1 )
 
 [node name="Props and Platforms" type="Node2D" parent="."]
@@ -80,7 +81,7 @@ position = Vector2( 552, -8 )
 position = Vector2( 436, -8 )
 
 [node name="Window6" parent="Props and Platforms" instance=ExtResource( 7 )]
-position = Vector2( 668, 48 )
+position = Vector2( 652, 50 )
 
 [node name="GarbageCan" parent="Props and Platforms" instance=ExtResource( 3 )]
 position = Vector2( 386, 175 )
@@ -110,7 +111,7 @@ position = Vector2( 221, 134 )
 position = Vector2( 310, 137 )
 
 [node name="Food9" parent="Food" instance=ExtResource( 5 )]
-position = Vector2( 672, 68 )
+position = Vector2( 656, 70 )
 
 [node name="Food6" parent="Food" instance=ExtResource( 5 )]
 position = Vector2( -100, 48 )
@@ -225,15 +226,14 @@ position = Vector2( 553, 23 )
 position = Vector2( 812, 173 )
 scale = Vector2( -1, 1 )
 
-[node name="AnimatedSprite" parent="Enemies/BouncerRat" index="2"]
+[node name="AnimatedSprite" parent="Enemies/BouncerRat" index="0"]
 position = Vector2( 1, -31 )
-frame = 4
 
 [node name="CollisionShape2D" parent="Enemies/BouncerRat/Area2D" index="0"]
-position = Vector2( 74, -9 )
+position = Vector2( 39, -8 )
 
-[node name="CollisionShape2D" parent="Enemies/BouncerRat" index="4"]
-position = Vector2( 39, 177 )
+[node name="CollisionShape2D" parent="Enemies/BouncerRat" index="2"]
+position = Vector2( 20, 177 )
 
 [editable path="Player"]
 [editable path="KitchenDoor"]
