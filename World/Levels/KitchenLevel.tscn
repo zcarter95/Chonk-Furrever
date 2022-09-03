@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://World/Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://Platforms and Props/Window.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Platforms and Props/GarbageCan.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Powerups/Food/Food.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Platforms and Props/Counter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/BouncerRat.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Platforms and Props/Block2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Enemies/BruiserRat.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Sprites/DoorToCheese.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 360, 10 )
@@ -23,11 +28,8 @@ position = Vector2( -479, 180 )
 position = Vector2( 238, -299 )
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
-position = Vector2( 212, 152 )
+position = Vector2( -448, 157 )
 current = true
-
-[node name="GarbageCan" parent="." instance=ExtResource( 6 )]
-position = Vector2( 43, 126 )
 
 [node name="AlleyBg1" type="Sprite" parent="."]
 position = Vector2( -120, -60 )
@@ -35,7 +37,10 @@ z_index = -100
 texture = ExtResource( 4 )
 
 [node name="Window" parent="." instance=ExtResource( 5 )]
-position = Vector2( 140, 35 )
+position = Vector2( 25, 25 )
+
+[node name="Window2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -125, 10 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -46,24 +51,66 @@ shape = SubResource( 1 )
 [node name="Food" type="Node2D" parent="."]
 
 [node name="Food2" parent="Food" instance=ExtResource( 7 )]
-position = Vector2( 33, 45 )
+position = Vector2( -246, 30 )
 
 [node name="Food3" parent="Food" instance=ExtResource( 7 )]
-position = Vector2( 130, 144 )
+position = Vector2( 24, 89 )
+
+[node name="Food5" parent="Food" instance=ExtResource( 7 )]
+position = Vector2( 45, 143 )
+
+[node name="Food6" parent="Food" instance=ExtResource( 7 )]
+position = Vector2( 8, 140 )
+
+[node name="Food7" parent="Food" instance=ExtResource( 7 )]
+position = Vector2( 90, 142 )
 
 [node name="Food4" parent="Food" instance=ExtResource( 7 )]
-position = Vector2( 141, 44 )
+position = Vector2( -47, 11 )
 missable = true
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
-position = Vector2( -442, 173 )
+position = Vector2( 221, 167 )
 scene_to_load = "res://World/Levels/WinScreenLevel.tscn"
 
+[node name="DoorToCheese" type="Sprite" parent="Door"]
+position = Vector2( -28, -34 )
+texture = ExtResource( 12 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 212, 152 )
+position = Vector2( -460, 168 )
 
 [node name="RemoteTransform2D" parent="Player" index="10"]
+position = Vector2( 12, -11 )
 remote_path = NodePath("../../Camera/Camera2D")
+
+[node name="Dumpster" parent="." instance=ExtResource( 8 )]
+position = Vector2( -32, 172 )
+
+[node name="GarbageCan" parent="Dumpster" instance=ExtResource( 6 )]
+position = Vector2( -37, -23 )
+
+[node name="BruiserRat2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 6, 174 )
+
+[node name="BruiserRat3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 85, 172 )
+
+[node name="BruiserRat4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 42, 173 )
+
+[node name="BouncerRat" parent="." instance=ExtResource( 9 )]
+position = Vector2( 186, 172 )
+scale = Vector2( -1, 1 )
+
+[node name="Block" parent="." instance=ExtResource( 10 )]
+position = Vector2( -346, 156 )
+
+[node name="Block" parent="Block" instance=ExtResource( 10 )]
+position = Vector2( 167, -3 )
+
+[node name="BruiserRat" parent="." instance=ExtResource( 11 )]
+position = Vector2( -258, 172 )
 
 [connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
 
