@@ -51,10 +51,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 4, 6.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 4, 6.2, 6.4, 6.6, 6.8, 7, 7.2, 7.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -100 ), Vector2( 0, -100 ), Vector2( 0, 8 ) ]
+"values": [ Vector2( 0, -100 ), Vector2( 0, -100 ), Vector2( 0, 8 ), Vector2( 0, 8 ), Vector2( 0, 10 ), Vector2( 0, 6 ), Vector2( 0, 8 ), Vector2( 0, 10 ), Vector2( 0, 6 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("MainMenu/Furrever:rect_position")
@@ -415,7 +415,7 @@ alignment = 1
 
 [node name="StartGame" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_right = 68.0
-margin_bottom = 9.00005
+margin_bottom = 9.00007
 action_mode = 0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 12 )
@@ -426,7 +426,7 @@ stretch_mode = 3
 [node name="Controls" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_top = 22.0
 margin_right = 68.0
-margin_bottom = 31.0001
+margin_bottom = 31.0
 action_mode = 0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 18 )
@@ -437,7 +437,7 @@ stretch_mode = 3
 [node name="Options" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_top = 42.0
 margin_right = 68.0
-margin_bottom = 53.0001
+margin_bottom = 53.0
 action_mode = 0
 texture_normal = ExtResource( 13 )
 texture_pressed = ExtResource( 6 )
@@ -448,7 +448,7 @@ stretch_mode = 3
 [node name="Quit" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_top = 44.0
 margin_right = 68.0
-margin_bottom = 53.0
+margin_bottom = 53.0001
 action_mode = 0
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 16 )
@@ -457,7 +457,6 @@ texture_focused = ExtResource( 16 )
 stretch_mode = 3
 
 [node name="Controls" type="VBoxContainer" parent="MenuRoot"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 240.0
