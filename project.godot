@@ -99,7 +99,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ChonkFurrever"
-run/main_scene="res://World/Levels/AlleyLevel.tscn"
+run/main_scene="res://World/Levels/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
