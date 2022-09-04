@@ -13,6 +13,7 @@ onready var cat1CollisionShape = $Cat1CollisionShape2D
 onready var cat2CollisionShape = $Cat2CollisionShape2D
 onready var cat3CollisionShape = $Cat2CollisionShape2D
 onready var cat4CollisionShape = $Cat1CollisionShape2D
+onready var knockbackTimer = $KnockbackTimer
 
 onready var animationPlayer = $AnimationPlayer
 
@@ -35,6 +36,7 @@ var jump_strength = 500.00
 var food_consumed = 0
 var missable_food_consumed = 0
 var horizontal_direction = 0
+var received_knockback = false
 
 func _ready():
 	cat1AnimatedSprite.visible = false
@@ -50,6 +52,8 @@ func _ready():
 
 func _physics_process(delta):
 	
+	print_debug(velocity)
+	
 	handle_cat_state()
 	level_up()
 	
@@ -57,7 +61,10 @@ func _physics_process(delta):
 	horizontal_direction = (Input.get_action_strength("right") - Input.get_action_strength("left"))
 	
 	# Update Horizontal Velocity
-	velocity.x = horizontal_direction * speed
+	if !received_knockback:
+		velocity.x = horizontal_direction * speed
+	else:
+		velocity.x = 250 * -horizontal_direction
 	# Apply Gravity
 	velocity.y += gravity * delta
 	
@@ -139,8 +146,10 @@ func receive_knockback(damage_source_pos: Vector2):
 	var knockback_strength = 10
 	var knockback = knockback_direction * knockback_strength
 	
-	global_position += knockback
-	global_position.y += 10
+	velocity.y = -jump_strength * 0.7
+	received_knockback = true
+	knockbackTimer.start()
+	
 		
 		
 func handle_cat_state():
@@ -232,3 +241,7 @@ func level_up():
 		
 	
 
+
+
+func _on_KnockbackTimer_timeout():
+	received_knockback = false

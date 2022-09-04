@@ -415,7 +415,7 @@ alignment = 1
 
 [node name="StartGame" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_right = 68.0
-margin_bottom = 9.00007
+margin_bottom = 9.0
 action_mode = 0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 12 )
@@ -448,7 +448,7 @@ stretch_mode = 3
 [node name="Quit" type="TextureButton" parent="MenuRoot/MainMenu/VBoxContainer"]
 margin_top = 44.0
 margin_right = 68.0
-margin_bottom = 53.0001
+margin_bottom = 53.0
 action_mode = 0
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 16 )
