@@ -66,22 +66,22 @@ __meta__ = {
 }
 
 [node name="Window" parent="Props and Platforms" instance=ExtResource( 7 )]
-position = Vector2( 320, -8 )
+position = Vector2( 300, -8 )
 
 [node name="Window3" parent="Props and Platforms" instance=ExtResource( 7 )]
 position = Vector2( -104, 28 )
 
 [node name="Window2" parent="Props and Platforms" instance=ExtResource( 7 )]
-position = Vector2( 152, 52 )
+position = Vector2( 126, 53 )
 
 [node name="Window4" parent="Props and Platforms" instance=ExtResource( 7 )]
-position = Vector2( 552, -8 )
+position = Vector2( 566, -5 )
 
 [node name="Window5" parent="Props and Platforms" instance=ExtResource( 7 )]
-position = Vector2( 436, -8 )
+position = Vector2( 441, -8 )
 
 [node name="Window6" parent="Props and Platforms" instance=ExtResource( 7 )]
-position = Vector2( 652, 50 )
+position = Vector2( 679, 51 )
 
 [node name="GarbageCan" parent="Props and Platforms" instance=ExtResource( 3 )]
 position = Vector2( 386, 175 )
@@ -99,7 +99,7 @@ __meta__ = {
 }
 
 [node name="Food2" parent="Food" instance=ExtResource( 5 )]
-position = Vector2( 158, 72 )
+position = Vector2( 132, 73 )
 
 [node name="Food5" parent="Food" instance=ExtResource( 5 )]
 position = Vector2( -107, 203 )
@@ -111,13 +111,13 @@ position = Vector2( 221, 134 )
 position = Vector2( 310, 137 )
 
 [node name="Food9" parent="Food" instance=ExtResource( 5 )]
-position = Vector2( 656, 70 )
+position = Vector2( 683, 71 )
 
 [node name="Food6" parent="Food" instance=ExtResource( 5 )]
 position = Vector2( -100, 48 )
 
 [node name="Food3" parent="Food" instance=ExtResource( 5 )]
-position = Vector2( 324, 12 )
+position = Vector2( 304, 12 )
 
 [node name="Food4" parent="Food" instance=ExtResource( 5 )]
 position = Vector2( -24, 168 )
@@ -154,7 +154,7 @@ position = Vector2( -200, 208 )
 position = Vector2( 262, 46 )
 
 [node name="Block19" parent="Blocks" instance=ExtResource( 8 )]
-position = Vector2( 44, 66 )
+position = Vector2( 32, 66 )
 
 [node name="Block2" parent="Blocks" instance=ExtResource( 8 )]
 position = Vector2( -200, 176 )
@@ -220,7 +220,7 @@ position = Vector2( 386, 167 )
 position = Vector2( 263, 142 )
 
 [node name="BruiserRat6" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 553, 23 )
+position = Vector2( 567, 26 )
 
 [node name="BouncerRat" parent="Enemies" instance=ExtResource( 10 )]
 position = Vector2( 812, 173 )

@@ -48,6 +48,7 @@ func _on_TopChecker_body_entered(body):
 			sideChecker.disabled = true
 			velocity = direction * 0
 			animationPlayer.play("Squash")
+			SoundManager.play_se("Hurt")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -61,4 +62,5 @@ func _on_SideChecker_body_entered(body):
 			body.player_hurt()
 			body.receive_knockback(global_position)
 		else:
+			SoundManager.play_se("Hurt")
 			animationPlayer.play("Squash")

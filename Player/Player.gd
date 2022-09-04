@@ -64,7 +64,8 @@ func _physics_process(delta):
 	if !received_knockback:
 		velocity.x = horizontal_direction * speed
 	else:
-		velocity.x = 250 * -horizontal_direction
+		if horizontal_direction != 0:
+			velocity.x = 500 * -horizontal_direction
 	# Apply Gravity
 	velocity.y += gravity * delta
 	
@@ -146,7 +147,7 @@ func receive_knockback(damage_source_pos: Vector2):
 	var knockback_strength = 10
 	var knockback = knockback_direction * knockback_strength
 	
-	velocity.y = -jump_strength * 0.7
+	velocity.y = -jump_strength
 	received_knockback = true
 	knockbackTimer.start()
 	
